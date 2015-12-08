@@ -1,6 +1,9 @@
-//creating a kitty object.
-var tinyCuteLilKittenz = function(photoName, pic) {
-  this.photoName = name;
-  this.pic = pic;
-};
+//creating an array for the photos.
+var kittyPix = [];
 
+function superLuckHappyCuteLilKittenz(photo, path) {
+  this.photo = photo;
+  this.path = path;
+  this.vote = 0;
+  kittyPix.push(this);
+}
