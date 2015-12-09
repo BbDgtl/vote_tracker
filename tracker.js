@@ -26,13 +26,25 @@ function genRandom() {
   return Math.floor(Math.random() * kittyPix.length);
 }
 
+//console.log("Are you working?");
+
 //display kitty photos.
 displayKittenz = function() {
-  tracker.pic1 = genRandom();
-  tracker.pic2 = genRandom();
-  pic1.src = kittyPix[tracker.pic1].path;
-};
+    tracker.pic1 = genRandom();
+    tracker.pic2 = genRandom();
+    kitty1.src = kittyPix[tracker.pic1].path;
 
 if (tracker.pic1 === tracker.pic2) {
-
+    tracker.pic2 = genRandom();
 }
+
+    kitty2.src = kittyPix[tracker.pic2].path;
+
+    pic1.setAttribute('width', '300');
+    pic2.setAttribute('width', '300');
+    temp1.appendChild(kitty1);
+    temp2.appendChild(kitty2);
+};
+
+//console.log("Are you still working?");
+displayKittenz();
