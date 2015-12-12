@@ -1,50 +1,118 @@
-//creating an array for the photos.
-var kittyPix = [];
 
-//superLuckyHappyCuteLilKittenz object.
-function superLuckyHappyCuteLilKittenz(photo, path) {
+var kittens = [];
+
+var CutestKitten = function(name, photo) {
+  this.name = name;
   this.photo = photo;
-  this.path = path;
-  this.vote = 0;
-  kittyPix.push(this);
-}
-
-//creating a switch case for the tracker
-var tracker = {
-  pic1: 0,
-  pic2: 0
+  this.votes = 0;
+  kittens.push(this);
 };
 
-//DOM manipulation, creating "kitty" elements.
-var kitty1 = document.createElement("img");
-var kitty2 = document.createElement("img");
-var temp1 = document.getElementById("temp1");
-var temp2 = document.getElementById("temp2");
+if (localStorage !== null) {
+  localStorage.getItem(CutestKitten);
+} else {
+  getStorage();
+}
 
-//random number generator
+var stringKitty = new CutestKitten("stringKitty", "images/01 - pPA0iM0.jpg");
+var palmKitty = new CutestKitten("palmKitty", "images/02 - 7ykJ1xi.jpg");
+var treeKitty = new CutestKitten("treeKitty", "images/03 - n91EiPd.jpg");
+var attackKitty = new CutestKitten("attackKitty", "images/04 - LDiTFeQ.jpg");
+var fingerKitty = new CutestKitten("fingerKitty", "images/05 - ywavhKp.jpg");
+var snoozeKitty = new CutestKitten("snoozeKitty", "images/06 - 9Fg6CZS.jpg");
+var shoeKitty = new CutestKitten("shoeKitty", "images/07 - leaDJOY.jpg");
+var jungleKitty = new CutestKitten("jungleKitty", "images/08 - XA0PRs2.jpg");
+var warmKitty = new CutestKitten("warmKitty", "images/09 - rkO8XVX.jpg");
+var pawKitty = new CutestKitten("pawKitty", "images/11 - aGJW6lS.jpg");
+var naptimeKitty = new CutestKitten("naptimeKitty", "images/12 - 60maZWt.jpg");
+var bagKitty = new CutestKitten("bagKitty", "images/13 - u9wzm0f.jpg");
+var fluffyKitty = new CutestKitten("fluffyKitty", "images/14 - vyz8MGP.jpg");
+
+//creates random image
 function genRandom() {
-  return Math.floor(Math.random() * kittyPix.length);
+  return Math.floor(Math.random() * kittens.length);
 }
 
-//console.log("Are you working?");
+var img1 = document.getElementById("img1");
+var img2 = document.getElementById("img2");
 
-//display kitty photos.
-displayKittenz = function() {
-    tracker.pic1 = genRandom();
-    tracker.pic2 = genRandom();
-    kitty1.src = kittyPix[tracker.pic1].path;
+var randomPhoto1, randomPhoto2;
 
-if (tracker.pic1 === tracker.pic2) {
-    tracker.pic2 = genRandom();
+function compareImg() {
+  randomPhoto1 = genRandom();
+  randomPhoto2 = genRandom();
+  if (randomPhoto1 === randomPhoto2) {
+    randomPhoto1 = genRandom();
+
+  }
+  img1.src = kittens[randomPhoto1].photo;
+  img2.src = kittens[randomPhoto2].photo;
 }
+compareImg();
 
-    kitty2.src = kittyPix[tracker.pic2].path;
-
-    pic1.setAttribute('width', '300');
-    pic2.setAttribute('width', '300');
-    temp1.appendChild(kitty1);
-    temp2.appendChild(kitty2);
+var voteFor = function() {
+  for (var i in kittens) {
+    if (kittens[i].src === kittens) {
+      kittens.votes +=1;
+    }
+  }
 };
 
-//console.log("Are you still working?");
-displayKittenz();
+function makeChart () {
+  var data = [
+      {
+          value: kittens[randomPhoto1].votes,
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "Red"
+      },
+
+      {
+          value: kittens[randomPhoto2].votes,
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "Green"
+      }
+  ];
+
+  var context = document.getElementById("myChart").getContext("2d");
+  var skillsChart = new Chart(context).Doughnut(data, {
+    animationSteps : 10,
+    animationString : "easeOutBounce",
+    animateRotate : true,
+    animateScale : false,
+  });
+}
+makeChart();
+
+var vote = function() {
+  localStorage.setItem("vote", JSON.stringify(kittens));
+};
+
+var getStorage = function() {
+  var storedVote1 = localStorage.getItem("vote");
+  kittens = JSON.parse(storedVote1);
+};
+
+img1.addEventListener("click", function() {
+  console.log(kittens[randomPhoto1].photo);
+  kittens[randomPhoto1].votes += 1;
+  console.log(kittens[randomPhoto1].votes);
+  voteFor(img1.src);
+  compareImg();
+  makeChart();
+  vote();
+  getStg();
+});
+
+img2.addEventListener("click", function() {
+  console.log(kittens[randomPhoto2].photo);
+  //this represents the obj.votes
+  kittens[randomPhoto2].votes += 1;
+  console.log(kittens[randomPhoto2].votes);
+  voteFor(img2.src);
+  compareImg();
+  makeChart();
+  vote();
+  getStg();
+});

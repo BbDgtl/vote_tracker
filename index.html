@@ -1,48 +1,43 @@
+
 <!DOCTYPE html>
-  <html>
+<html>
 
-    <head>
+  <head>
+    <title>Vote Tracker</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <script src="chart.js"></script>
+  </head>
 
-      <title>Vote Tracker</title>
+  <body>
+    <header>
+      <h1>Cutest Kitty</h1>
+      <h3>Choose the cutest kitten of the bunch!</h3>
+    </header>
 
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
-    </head>
+    <main class="parent">
+      <section id="box_one">
+        <article class="child">
+        <img id="img1" class="img" />
+        </article>
+      </section>
 
-    <body>
-      <!-- ************DIV WRAPPER************* -->
-      <div class="wrapper">
-        <header>
-
-          <h1 id="kittyTitle">Super Lucky Happy Cute Lil Kittenz!</h1>
-
-          <article>
-            <p id="intro">Vote for your favorite <span id="kittenz">Super Lucky Happy Cute 'lil Kitten</span> and make it the most superest luckiest happiest cutest lil'est kitten of them all!</p>
-          </article>
-        </header>
-
-        <main>
-          <!-- ******************** KITTEN DISPLAY *************** -->
-          <div id="temp1">
-            <p id="kitty1Name">Super Lucky Happy Cute 'lil Kitten Number One!</p>
+      <section id="box_two">
+        <article class="child">
+          <div id="chart" class="chart">
+            <canvas id="myChart" width="280" height="180"></canvas>
           </div>
+        </article>
+      </section>
 
-          <div id="temp2">
-            <p id="kitty2Name">Super Lucky Happy Cute 'lil Kitten Number Two!</p>
-          </div>
-          <!-- ******************* KITTEN DISPLAY END *************** -->
-
-        </main>
-
-        <script src="tracker.js"></script>
-      </div>
-      <!-- ***********WRAPPER END****************** -->
-    </body>
-
-    <footer>
-      <article>
-        <p>Thanks for voting for the most superest luckiest happiest cutest 'lil'est kitten of them all! If you like other cute happy lucky 'lil baby animals, please see my other cute happy lucky 'lil websites that might actually be cute happier luckier 'lil websites!</p>
-      </article>
-    </footer>
-
-  </html>
+      <section id="box_three">
+        <article class="child">
+          <img id="img2" class="img" />
+        </article>
+      </section>
+    </main>
+  </body>
+  <script type="text/javascript" src="tracker.js"></script>
+  <footer></footer>
+</html>
