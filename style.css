@@ -1,6 +1,6 @@
 
 body {
-  color: #FFD34E;
+  color: #AC0000;
 }
 
 .parent {
@@ -11,8 +11,7 @@ body {
   flex-flow: 100%;
   justify-content: space-around;
   justify-content: flex-center;
-  background-color: #FFD34E;
-  border-radius: 10px;
+  background-color: #EB0F60;
   padding-top: 10px;
 }
 
@@ -24,7 +23,6 @@ body {
   text-align: center;
   align-items: center;
   margin: auto;
-  border-radius: 10px;
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
@@ -33,21 +31,10 @@ body {
 header, footer {
   font-family: "Righteous", cursive;
   text-align: center;
-  background-color: white;
-  border-radius: 10px;
+  background-color: #FF40DE;
 }
 h1, h3 {
-  color: #FFD34E;
-}
-
-#box_one, #box_three {
-background-color: #BD4932;
-border-radius: 10px;
-}
-
-#box_two {
-background-color: #FFFAD5;
-border-radius: 10px;
+  color: #F2F5F4;
 }
 
 .img {
@@ -55,5 +42,8 @@ border-radius: 10px;
   max-width: 90%;
   min-height: 90%;
   max-height: 99%;
-  border-radius: 10px;
+}
+
+.topandbottom {
+  background-color: #AC0000;
 }

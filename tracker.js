@@ -62,16 +62,16 @@ function makeChart () {
   var data = [
       {
           value: kittens[randomPhoto1].votes,
-          color:"#F7464A",
-          highlight: "#FF5A5E",
-          label: "Red"
+          color:"#FF80CB",
+          highlight: "#F2F5F4",
+          label: "Pink"
       },
 
       {
           value: kittens[randomPhoto2].votes,
-          color: "#46BFBD",
-          highlight: "#5AD3D1",
-          label: "Green"
+          color: "#FF40DE",
+          highlight: "#F2F5F4",
+          label: "White"
       }
   ];
 
@@ -107,7 +107,6 @@ img1.addEventListener("click", function() {
 
 img2.addEventListener("click", function() {
   console.log(kittens[randomPhoto2].photo);
-  //this represents the obj.votes
   kittens[randomPhoto2].votes += 1;
   console.log(kittens[randomPhoto2].votes);
   voteFor(img2.src);
