@@ -102,7 +102,7 @@ img1.addEventListener("click", function() {
   compareImg();
   makeChart();
   vote();
-  getStg();
+  getStorage();
 });
 
 img2.addEventListener("click", function() {
@@ -113,5 +113,5 @@ img2.addEventListener("click", function() {
   compareImg();
   makeChart();
   vote();
-  getStg();
+  getStorage();
 });
